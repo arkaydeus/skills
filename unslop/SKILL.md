@@ -1,21 +1,35 @@
 ---
 name: unslop
-description: Cut AI tells from any writing. Must always apply.
+description: Cut AI tells from any writing. Must always apply. Preserve facts. Audit only when asked to flag, not rewrite.
 license: MIT
 metadata:
   author: arkaydeus
-  source: Extracted from cursor/plugins pstack unslop (MIT). Rules unchanged.
+  source: Cursor pstack unslop (Lauren Tan, MIT) plus selected guards and tells from theclaymethod/unslop.
 ---
 
 # Unslop
 
-Edit text to remove AI patterns and add human voice.
+Cut AI tells. Keep meaning. Do not invent a new voice on top of the facts.
+
+Must always apply to your own replies and to any draft you are asked to clean.
+If the user says "just flag it", "audit", or "don't change anything", report tells and leave the text alone.
+
+## Guards
+
+Stolen from claymethod. These beat a clever rewrite.
+
+- Prefer a no-op to an uncertain edit.
+- Preserve facts, numbers, dates, names, quotes, citations, URLs, code fences, units, and legal or safety words such as never, must, and all.
+- Do not add claims, anecdotes, certainty, or a conclusion the source did not make.
+- Do not rewrite text inside quotes, blockquotes, or code fences unless the user is documenting the tell.
+- Do not swap in stock "human" phrases. Staccato anti-slop is still slop.
+- British English for this house skill (colour, organise, towards) unless the source is already US English and you are only cleaning tells.
 
 ## Process
 
 1. Scan for the patterns below.
-2. Rewrite. Preserve meaning, match intended tone.
-3. Add soul (see next section).
+2. Rewrite only the defective spans. Leave the rest.
+3. Add soul (see next section) only when you are writing or the user asked for a rewrite, not on an audit.
 4. Self-audit: "What makes this obviously AI generated?" Fix remaining tells.
 
 ## Adding soul
@@ -82,3 +96,31 @@ Removing patterns is half the job. Sterile, voiceless writing is just as obvious
 29. **Active voice.** Prefer it. Catch "is/are/was/were + past participle" and name the actor: "queries are validated" becomes "the compiler validates queries", "the file is parsed by the loader" becomes "the loader parses the file". Passive is fine only when the actor is unknown or genuinely doesn't matter.
 30. **Cut adverbs, or use a stronger verb.** "runs quickly" becomes "is fast" or the number. "significantly improves" becomes the measured delta. An adverb propping up a weak verb means the verb is wrong.
 31. **Prefer the plain word.** "utilize" becomes "use", "leverage" becomes "use", "facilitate" becomes "help", "numerous" becomes "many", "in the event that" becomes "if". The fancier synonym is rarely clearer.
+
+### Extra tells (from claymethod)
+
+32. **Throat-clearing.** Cut "Here's the thing", "Let me be clear", "Let's dive in", "Let's unpack", "Let's break this down", "The uncomfortable truth is", "Here's what nobody tells you".
+33. **Emphasis crutches.** Cut "Let that sink in", "Full stop.", "Read that again", "This cannot be overstated", "Why this matters" as a setup.
+34. **Workshop and meta.** Cut "Hint:", "Plot twist:", "Pro tip", "Hot take", "Unpopular opinion", "To put it simply", "In other words", "If you think about it".
+35. **Reasoning leaks.** Cut "Let me think step by step", "Here's my thought process", "You're asking about", "To answer your question". Just answer.
+36. **Knowledge-cutoff residue.** Cut "as of my last knowledge update", "based on my training data", "I don't have access to real-time", "as an AI assistant".
+37. **False agency.** Data does not "speak for itself" or "tell a story". State the finding. Tools do not decide, hunt, or want.
+38. **Essay scaffolding.** Cut "In conclusion", "In summary", "Firstly / Secondly / Thirdly", "Looking ahead", "The key takeaway". Lead with the point.
+39. **False concessions.** "While X is promising, Y remains a challenge" is a template. Name the actual tradeoff or pick a side.
+
+## Audit output
+
+When flagging only:
+
+```markdown
+## Issues found
+
+- [quoted span] — [category] — [why it reads as AI]
+
+## Assessment
+
+- Clear problems
+- Judgment calls
+```
+
+When rewriting, return the cleaned text. Do not append a methods lecture.
