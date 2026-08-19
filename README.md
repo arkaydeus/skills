@@ -6,7 +6,7 @@ Agent skills for Cursor and Grok Bot.
 
 Standalone extract of Cursor's official pstack `unslop` skill, with a few additions from [theclaymethod/unslop](https://github.com/theclaymethod/unslop).
 
-Kept from Cursor: the 31 rewrite rules and the "must always apply" voice.
+Kept from Cursor: the 31 rewrite rules. Invoke-only here, not always-on, so it does not burn tokens on ordinary chat.
 
 Added from claymethod: fact-preservation guards, an audit-only mode, and extra tells (throat-clearing, reasoning leaks, knowledge-cutoff residue, false agency, essay scaffolding).
 
@@ -24,4 +24,4 @@ Or copy `unslop/SKILL.md` into your skills folder.
 
 ### Use
 
-Enable it on the bots you want. Once enabled, the agent should follow these rules on every reply. Say "just flag it" if you want an audit and no rewrite.
+Invoke only: `/unslop`, `@unslop`, or an explicit ask to unslop / humanise a draft. It does not run on ordinary replies. Say "just flag it" for an audit and no rewrite.

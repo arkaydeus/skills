@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Cut AI tells from any writing. Must always apply. Preserve facts. Audit only when asked to flag, not rewrite.
+description: Use only when the user invokes /unslop or @unslop, or explicitly asks to unslop, humanise, de-slop, or strip AI tells from a draft. Do not load this skill for ordinary replies.
 license: MIT
 metadata:
   author: arkaydeus
@@ -11,7 +11,7 @@ metadata:
 
 Cut AI tells. Keep meaning. Do not invent a new voice on top of the facts.
 
-Must always apply to your own replies and to any draft you are asked to clean.
+Invoke only. Do not apply on ordinary chat.
 If the user says "just flag it", "audit", or "don't change anything", report tells and leave the text alone.
 
 ## Guards
