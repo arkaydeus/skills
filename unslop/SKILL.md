@@ -4,7 +4,7 @@ description: Use only when the user invokes /unslop or @unslop, or explicitly as
 license: MIT
 metadata:
   author: arkaydeus
-  source: Cursor pstack unslop (Lauren Tan, MIT) plus selected guards and tells from theclaymethod/unslop.
+  source: Extracted from cursor/plugins pstack unslop (MIT).
 ---
 
 # Unslop
@@ -15,8 +15,6 @@ Invoke only. Do not apply on ordinary chat.
 If the user says "just flag it", "audit", or "don't change anything", report tells and leave the text alone.
 
 ## Guards
-
-Stolen from claymethod. These beat a clever rewrite.
 
 - Prefer a no-op to an uncertain edit.
 - Preserve facts, numbers, dates, names, quotes, citations, URLs, code fences, units, and legal or safety words such as never, must, and all.
@@ -97,7 +95,7 @@ Removing patterns is half the job. Sterile, voiceless writing is just as obvious
 30. **Cut adverbs, or use a stronger verb.** "runs quickly" becomes "is fast" or the number. "significantly improves" becomes the measured delta. An adverb propping up a weak verb means the verb is wrong.
 31. **Prefer the plain word.** "utilize" becomes "use", "leverage" becomes "use", "facilitate" becomes "help", "numerous" becomes "many", "in the event that" becomes "if". The fancier synonym is rarely clearer.
 
-### Extra tells (from claymethod)
+### Extra tells
 
 32. **Throat-clearing.** Cut "Here's the thing", "Let me be clear", "Let's dive in", "Let's unpack", "Let's break this down", "The uncomfortable truth is", "Here's what nobody tells you".
 33. **Emphasis crutches.** Cut "Let that sink in", "Full stop.", "Read that again", "This cannot be overstated", "Why this matters" as a setup.
