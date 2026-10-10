@@ -12,7 +12,7 @@ British English throughout (colour, organised, towards, prioritised).
 
 ## Do not add
 
-Do not include cookie banners, cookie consent, GDPR, or data-protection checks anywhere: not in the baseline, not in research additions, not in examples. The baseline is 18 items, not 19.
+Do not include cookie banners, cookie consent, GDPR, or data-protection checks anywhere: not in the baseline, not in research additions, not in examples. 
 
 Do not invent extra checklist items. If you notice something outside these lists, mention it in a short "Out of scope" note only if it blocks the audit itself (for example the site is down).
 
