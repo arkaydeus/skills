@@ -81,69 +81,69 @@ Request a path that cannot exist. Pass: a branded page with navigation or a way 
 
 On the first screen at 1280px and 375px, one primary action must be visible without scrolling. Pass: a specific action (Book a call, Get a quote). Warn: a vague "Learn more" that only jumps down the page. Fail: no action until the footer. Fix: put one primary button in the hero, labelled as the next step.
 
-### 3. Meta title and meta description per page
+### 3. Meta title
 
-Every sampled HTML page needs a unique `<title>` (roughly 50–60 characters) and a unique `meta name="description"` (roughly 140–160 characters) that matches the page. Pass: both present and distinct across pages. Warn: present but duplicated, truncated, or stuffed. Fail: missing on any indexable page. Fix: set unique title and description per route in the site's metadata config.
+Every sampled HTML page needs a unique `<title>` (roughly 50–60 characters) that matches the page. Pass: present and distinct across pages. Warn: present but duplicated, truncated, or stuffed. Fail: missing on any indexable page. Fix: set a unique title per route in the site's metadata config.
 
-### 4. Open Graph image
+### 4. Meta description
+
+Every sampled HTML page needs a unique `meta name="description"` (roughly 140–160 characters) that matches the page. Pass: present and distinct across pages. Warn: present but duplicated, truncated, or stuffed. Fail: missing on any indexable page. Fix: set a unique description per route in the site's metadata config.
+
+### 5. Open Graph image
 
 `og:image` must be an absolute HTTPS URL that returns an image, ideally 1200×630. Pass: image loads and is large enough to share. Warn: present but relative, too small, or a screenshot of the UI. Fail: missing or 404. Fix: add a 1200×630 `og:image` (and `og:image:alt`) on each indexable template.
 
-### 5. Favicon set
+### 6. Favicon set
 
 The document or `/favicon.ico` must provide a tab icon that loads. Pass: `rel="icon"` (and ideally a 32×32 or SVG) returns 200. Warn: only a default framework favicon. Fail: 404 or missing link. Fix: generate a real favicon set and link it in `<head>`.
 
-### 6. robots.txt
+### 7. robots.txt
 
 `GET /robots.txt` must return `text/plain` and 200. Pass: it does not `Disallow: /` on production and it references the sitemap. Warn: exists but no sitemap line. Fail: 404, HTML error page, or site-wide disallow on a live host. Fix: add a production `robots.txt` that allows the public site and points at the sitemap.
 
-### 7. sitemap.xml
+### 8. sitemap.xml
 
 `GET /sitemap.xml` (or the URL named in robots.txt) must be valid XML listing canonical indexable URLs. Pass: 200, parseable, URLs match the live host. Warn: exists but stale, missing key pages, or includes noindex/redirects. Fail: 404 or HTML. Fix: generate the sitemap from routes and submit that URL in Search Console.
 
-### 8. Alt text on every image
+### 9. Alt text on every image
 
 Every content `<img>` needs an `alt` that describes the image. Decorative images may use `alt=""`. Pass: all sampled images have alt. Warn: generic alt ("image", filename). Fail: missing alt on content images. Fix: write specific alt for each content image; use empty alt only when the image is purely decorative.
 
-### 9. Mobile breakpoints
+### 10. Mobile breakpoints
 
 The layout must work at 375px, 768px, and 1280px: no horizontal scroll, readable type, tappable controls. Pass: those three widths hold together. Warn: cramped type or overflow on one width. Fail: unusable on a phone-width viewport. Fix: add a viewport meta tag if missing, then fix the overflow with a real mobile layout, not desktop scaled down.
 
-### 10. Sticky mobile call-to-action
+### 11. Sticky mobile call-to-action
 
 At 375px, the primary action must stay reachable while scrolling (sticky bar, sticky header button, or repeated CTA). Pass: always tappable and not covering form fields. Warn: present but obscures content or the keyboard. Fail: CTA only at the bottom of a long page. Fix: add a sticky mobile bar for the primary action, with padding so it does not cover inputs.
 
-### 11. Loading states
+### 12. Loading states
 
 Async actions (forms, route changes, fetches) need a pending state. Pass: buttons disable or a skeleton/spinner appears. Warn: a spinner with no label. Fail: a second click double-submits, or the UI looks frozen. Fix: disable the submit control and show a labelled pending state until the response lands.
 
-### 12. Form error states
+### 13. Form error states
 
 Invalid submit must explain what failed, on the field. Pass: inline messages that say how to fix the value, and focus moves to the first error. Warn: a generic alert with no field. Fail: silent failure or a 500 page. Fix: validate on the server and the client; render the error next to the field and keep the entered values.
 
-### 13. Thank-you page
+### 14. Thank-you page
 
 Successful submit should land on a real URL (not only a modal) that confirms the action and says what happens next. Pass: dedicated thank-you route. Warn: inline "sent" with no next step. Fail: reload of the same form with no confirmation. Fix: redirect to `/thank-you` (or equivalent) with expected reply time and a next step.
 
-### 14. Privacy policy page
+### 15. Privacy policy page
 
 A linked, crawlable privacy page must exist. Pass: footer or nav link returns 200 and talks about this site. Warn: a stub or a copied policy that names the wrong company. Fail: 404 or no link. Fix: publish `/privacy` (or equivalent) and link it in the footer.
 
-### 15. Terms page
+### 16. Terms page
 
 A linked terms (or terms of use) page must exist. Pass: 200 and clearly about this service. Warn: buried PDF only. Fail: missing. Fix: publish `/terms` and link it next to the privacy page.
 
-### 16. Analytics installed
+### 17. Analytics installed
 
 The live HTML or network log must include a real analytics snippet (for example GA4, Plausible, Fathom, PostHog, or Vercel Analytics). Pass: script present and firing on the homepage. Warn: snippet present but blocked or on staging only. Fail: none. Fix: install one analytics tool on production and verify a page view appears.
 
-### 17. Real contact address
+### 18. Real contact address
 
 A geographic address, or a clearly named service area plus a real support email or phone, must appear (footer, contact page, or LocalBusiness markup that matches the page). Pass: a real street or registered office. Warn: email or phone only, or a PO Box when a visiting address exists. Fail: no way to reach a human, or an obvious placeholder. Fix: put the registered or visiting address in the footer and on the contact page.
-
-### 18. Compressed images
-
-Hero and content images should be modern formats (WebP or AVIF) or tightly compressed JPEG/PNG, not multi-megabyte originals. Pass: typical content images well under 200 KB, hero not an uncompressed PNG. Warn: one oversized hero but the rest are fine. Fail: several megabyte images on first paint. Fix: export WebP/AVIF, cap width to the rendered size, and compress before upload.
 
 ## Research additions
 
@@ -154,10 +154,10 @@ Run these as well. Each line is the reason to keep it.
 - **Core Web Vitals / performance.** LCP, CLS, and INP predict both ranking and whether the visitor waits.
 - **Accessibility.** Contrast, heading order, form labels, and keyboard focus are the cheapest WCAG failures, and they block conversion.
 - **Structured data.** JSON-LD that matches visible facts is how search engines earn rich results instead of a plain link.
-- **Twitter/X cards.** Shares without `twitter:card` (and image) fall back to a weak unfenced snippet.
+- **Twitter/X cards.** Shares without `twitter:card` (and image) fall back to a plain link with no image.
 - **`html lang` attribute.** Screen readers and translation tools need an explicit language on `<html>`.
 - **Broken links.** Dead internal or outbound links waste crawl budget and trust; spot-check nav, footer, and sampled body links.
-- **Image optimisation.** Dimensions, `srcset`, and lazy-loading below the fold keep compressed images from remaining the usual LCP killer.
+- **Image optimisation.** Oversized originals, missing dimensions, and no `srcset` or lazy-loading are the usual LCP killers.
 - **Apple-touch icon and web manifest.** iOS home-screen and install prompts need more than `favicon.ico`.
 - **404 returns a real 404 status.** A styled page that returns 200 is a soft-404 and can be indexed as a real page.
 
@@ -179,7 +179,7 @@ Twitter/X: `twitter:card` (`summary_large_image` when you have an image) plus ti
 
 Broken links: fail on any 4xx/5xx in nav, footer, or sampled in-body links.
 
-Image optimisation: `width`/`height` or aspect-ratio to stop CLS; `loading="lazy"` below the fold; `srcset` where the same image serves large desktops.
+Image optimisation: serve WebP or AVIF (or tightly compressed JPEG/PNG), not multi-megabyte originals; typical content images well under 200 KB, and the hero not an uncompressed PNG. Pass: those size and format bars plus `width`/`height` or aspect-ratio to stop CLS, `loading="lazy"` below the fold, and `srcset` where the same image serves large desktops. Warn: one oversized hero but the rest are fine. Fail: several megabyte images on first paint. Fix: export WebP/AVIF, cap width to the rendered size, and compress before upload.
 
 Apple-touch and manifest: `apple-touch-icon` 180×180 that loads, plus a linked `manifest.webmanifest` with name, icons, and `start_url`.
 
@@ -198,8 +198,8 @@ Lighthouse: performance 64, accessibility 81, SEO 92, best practices 73
 ## Summary
 
 - Fail: 4
-- Warn: 5
-- Pass: 20
+- Warn: 6
+- Pass: 19
 
 ## Fails (fix first)
 
@@ -221,12 +221,16 @@ Fix: return the form with `aria-invalid="true"` on the email field, an error suc
 
 ## Warns
 
-### Meta title and meta description per page — warn
-Homepage title is unique. `/services` and `/contact` both use "Example Ltd | Home" and the homepage description.
-Fix: give `/services` a title such as "Brand strategy and web builds | Example Ltd" and a description that names those services; do the same for contact.
+### Meta title — warn
+Homepage title is unique. `/services` and `/contact` both use "Example Ltd | Home".
+Fix: give `/services` a title such as "Brand strategy and web builds | Example Ltd"; do the same for contact.
 
-### Compressed images — warn
-Hero `hero.png` is 1.8 MB PNG. Other images are WebP under 120 KB.
+### Meta description — warn
+Homepage description is unique. `/services` and `/contact` reuse the homepage description.
+Fix: write a description for `/services` that names those services; do the same for contact.
+
+### Image optimisation — warn
+Hero `hero.png` is 1.8 MB PNG. Other images are WebP under 120 KB, with `width`/`height` and `loading="lazy"` below the fold.
 Fix: export the hero as WebP at the rendered width (here 1280px) aiming under 200 KB, and keep PNG only if you still need lossless.
 
 ### HTTPS, HSTS, and security headers — warn
@@ -262,7 +266,6 @@ Fix: add a 180×180 `apple-touch-icon.png` and a `site.webmanifest` with name, i
 - Twitter/X cards — `summary_large_image` with title, description, and image on homepage.
 - html lang attribute — `lang="en-GB"`.
 - Broken links — nav, footer, and sampled body links returned 200.
-- Image optimisation — `width`/`height` set; below-fold images use `loading="lazy"`.
 
 ## Out of scope
 
