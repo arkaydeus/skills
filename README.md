@@ -51,3 +51,45 @@ Or copy `website-audit/SKILL.md` into your skills folder.
 ### Use
 
 The skill applies when you ask for a website audit, launch checklist, or SEO/UX health check, or share a URL to review. Invoke it explicitly with `/website-audit` or `@website-audit` when your client supports skill commands.
+
+## motion-studio
+
+Code-first animation: the model writes a deterministic program, Playwright captures `seek(t)` frames, ffmpeg encodes. Start with `motion-studio`, which routes the job (product reel, UI demo, three.js loop, mascot, sound, X export, critique loop, session budget, client quote) to the specialist skills.
+
+Credits: [Florence (@flxrnc)](https://x.com/flxrnc), [damkin (@damkina7)](https://x.com/damkina7).
+
+| Skill | What it is for |
+| --- | --- |
+| `motion-studio` | Master router |
+| `motion-render` | Render contract, Playwright capture, ffmpeg |
+| `motion-prompt` | Directed brief and banned defaults |
+| `motion-maths` | Easing, closed-form springs, timing tokens |
+| `motion-principles` | Character and mascot animation principles |
+| `motion-engines` | HTML/CSS, GSAP, Motion, three.js, Remotion, HyperFrames |
+| `motion-sound` | Synthesised SFX, 120 BPM grid, loudness |
+| `motion-critique` | Frame inspection and numbered follow-ups |
+| `motion-export` | Loop seams and X / GIF encode |
+| `motion-harness` | Workspace fence and token budget |
+| `motion-pricing` | Client scope and quotes |
+
+### Install
+
+```bash
+npx skills add arkaydeus/skills --skill motion-studio
+npx skills add arkaydeus/skills --skill motion-render
+npx skills add arkaydeus/skills --skill motion-prompt
+npx skills add arkaydeus/skills --skill motion-maths
+npx skills add arkaydeus/skills --skill motion-principles
+npx skills add arkaydeus/skills --skill motion-engines
+npx skills add arkaydeus/skills --skill motion-sound
+npx skills add arkaydeus/skills --skill motion-critique
+npx skills add arkaydeus/skills --skill motion-export
+npx skills add arkaydeus/skills --skill motion-harness
+npx skills add arkaydeus/skills --skill motion-pricing
+```
+
+Or copy each skill's `SKILL.md` into your skills folder.
+
+### Use
+
+Invoke `/motion-studio` or `@motion-studio` (or the specialist name) when your client supports skill commands. Load `motion-studio` first on any animation job.
