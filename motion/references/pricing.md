@@ -1,16 +1,10 @@
----
-name: motion-pricing
-description: Quote and scope paid motion work from a code-first studio. Use when pricing a product reel, writing a client proposal, productising a 15-second demo, or comparing agency-style fees with a short deterministic build. Pitch the business outcome, not "AI video".
-license: MIT
----
-
 # Motion pricing
 
 Sell a timed, pixel-true product demo with source. Do not sell "AI video".
 
 British English throughout (colour, organised, towards, artefact).
 
-Default technical scope for a product reel is in `motion-studio` (job routing) and `motion-export` (masters). Keep `motion-harness` in mind when you estimate agent time.
+Default technical scope for a product reel is in `SKILL.md` (job routing) and `references/export.md` (masters). Keep `references/harness.md` in mind when you estimate agent time.
 
 ## Caveat: the published numbers disagree
 

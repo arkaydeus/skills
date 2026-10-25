@@ -1,16 +1,10 @@
----
-name: motion-export
-description: Finish animation loops and encode files X will play without mangling. Use when closing a loop seam, choosing MP4 versus GIF, setting 16:9 / 1:1 / 9:16 / 4:5 sizes, capping length for X, or building a palette-optimised GIF. Assumes a seek(t) PNG sequence or master already exists.
-license: MIT
----
-
 # Motion export
 
 The last mile is a loop with no seam and a file the platform will not transcode into mush.
 
 British English throughout (colour, organised, towards, artefact).
 
-Capture and master encode flags live in `motion-render`. Sound mux and loudness live in `motion-sound`.
+Capture and master encode flags live in `references/render.md`. Sound mux and loudness live in `references/sound.md`.
 
 ## Seamless loops
 
@@ -41,7 +35,7 @@ Limits change. Check current help before a paid delivery. The working defaults:
 | Video (prefer this) | MP4, H.264 High profile, yuv420p, AAC audio, up to 60 fps. 1920×1080 for 16:9, 1080×1080 for square, 1080×1350 for 4:5, 1080×1920 for 9:16. Length up to 140 seconds without Premium. Even width and height. |
 | GIF | 15 MB limit. About 1200 px wide at most; 800 px is often enough. One global palette. **25 or 50 fps, not 60.** |
 
-Master encode (picture only shown; add audio as in `motion-sound`):
+Master encode (picture only shown; add audio as in `references/sound.md`):
 
 ```bash
 ffmpeg -y -framerate 60 -i frames/%05d.png \
@@ -65,7 +59,7 @@ Banding means the palette cannot hold the gradient. Reduce gradients in the desi
 
 ## Product-reel package
 
-When the job is a paid 15-second promo (see `motion-pricing`):
+When the job is a paid 15-second promo (see `references/pricing.md`):
 
 - `published/master-16x9.mp4`
 - `published/cut-9x16.mp4`

@@ -1,16 +1,10 @@
----
-name: motion-harness
-description: Keep long animation-agent sessions cheap, deterministic, and stoppable. Use when budgeting tokens for an overnight critique loop, fencing sources/drafts/published, writing project instructions, throttling context, or setting acceptance gates so a run cannot retry forever.
-license: MIT
----
-
 # Motion harness
 
 A one-line prompt yields a throwaway clip. A fenced workspace yields the next video without rebuilding the pipeline. This skill is the fence, not the pictures.
 
 British English throughout (colour, organised, towards, artefact).
 
-Load with `motion-critique` for overnight iteration and `motion-render` for the acceptance artefact. Directed briefs belong in `motion-prompt`; do not dump them into standing instructions.
+Read `references/critique.md` for overnight iteration and `references/render.md` for the acceptance artefact. Directed briefs belong in `references/brief.md`; do not dump them into standing instructions.
 
 ## The long-brief fact
 
@@ -40,11 +34,11 @@ No code until the storyboard is approved. Pipeline:
 Brief → Storyboard → Wireframe → Spring physics → Audio → Final
 ```
 
-If the user has not signed off the TIME field in `motion-prompt`, do not open the engine.
+If the user has not signed off the TIME field in `references/brief.md`, do not open the engine.
 
 ### 4. Context throttling
 
-Do not load the whole repo. Pull styling notes only for the components on screen. Pull `motion-maths` when timing changes, not when you are only fixing a hex value.
+Do not load the whole repo. Pull styling notes only for the components on screen. Read `references/maths.md` when timing changes, not when you are only fixing a hex value.
 
 ### 5. Circuit breakers
 

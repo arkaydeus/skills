@@ -1,16 +1,10 @@
----
-name: motion-sound
-description: Author animation sound on the same frame grid as the picture. Use when adding synthesised clicks, whooshes, or hits; locking a 120 BPM grid at 60 fps; exposing window.renderAudio as a WAV; or normalising loudness for social. Prefer OfflineAudioContext over stock libraries and over live AudioContext.
-license: MIT
----
-
 # Motion sound
 
 Write sound as code on the same timestamps as the picture. Do not drop a music bed on a finished MP4 and hope the transients land.
 
 British English throughout (colour, organised, towards, artefact).
 
-Needs `motion-render` for capture and mux, `motion-maths` for the beat grid, `motion-export` for the file X will play.
+Read `references/render.md` for capture and mux, `references/maths.md` for the beat grid, `references/export.md` for the file X will play.
 
 ## Shared timeline
 
@@ -105,7 +99,7 @@ ffmpeg -hide_banner -i out/final.mp4 -af ebur128 -f null - 2>&1 | tail -12
 
 Single-pass `loudnorm` can land a dB or two off on short, spiky beds. For an exact figure, run it twice: first with `print_format=json` to measure, then again with the measured values.
 
-`-framerate` on the picture must match capture fps or the bed will drift. WAV length must equal `DURATION`. See `motion-render` troubleshooting.
+`-framerate` on the picture must match capture fps or the bed will drift. WAV length must equal `DURATION`. See `references/render.md` troubleshooting.
 
 ## Credits
 

@@ -1,16 +1,10 @@
----
-name: motion-engines
-description: Choose the lightest animation engine that can make the shot and wire it to seek(t). Use when picking among HTML/CSS, GSAP, Motion, three.js, Remotion, or HyperFrames; when a scene needs a seek hook; or when deciding code-drawn UI versus a character-video overlay versus diffusion texture.
-license: MIT
----
-
 # Motion engines
 
 Pick the lightest engine that can make the shot. All of them use the same render, look, fix loop. Licences change: check current terms before a client delivery.
 
 British English throughout (colour, organised, towards, artefact).
 
-Capture for HTML scenes is `motion-render`. Timing tokens are `motion-maths`.
+Capture for HTML scenes is `references/render.md`. Timing tokens are `references/maths.md`.
 
 ## Decision
 

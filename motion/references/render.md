@@ -1,16 +1,10 @@
----
-name: motion-render
-description: Build and run a deterministic animation render pipeline. Use when capturing HTML, canvas, SVG, or three.js animation to PNG frames, WAV, or MP4; when a scene must freeze at an exact time t; or when headless Chromium, Playwright, or ffmpeg is part of a motion job. Prefer seek(t) over screen recording.
-license: MIT
----
-
 # Motion render
 
 Capture animation by seeking a pure function of time, then encoding the PNG sequence. Do not screen-record a live preview.
 
 British English throughout (colour, organised, towards, artefact).
 
-Pair with `motion-studio` for routing, `motion-maths` for timing tokens, `motion-export` for platform files, and `motion-sound` if `window.renderAudio` is involved.
+See `SKILL.md` for routing, `references/maths.md` for timing tokens, `references/export.md` for platform files, and `references/sound.md` if `window.renderAudio` is involved.
 
 ## Render contract
 
@@ -65,7 +59,7 @@ npx playwright install chromium
 ```text
 motion-lab/
   render.mjs      # frame capture
-  motion.js       # timing tokens (see motion-maths)
+  motion.js       # timing tokens (see references/maths.md)
   scene.html      # current piece
   frames/         # PNGs, wiped every render
   out/            # MP4, GIF, contact sheets
@@ -199,11 +193,11 @@ await browser.close();
 console.log(`done: ${total} frames in ./${o.out}`);
 ```
 
-Remotion compositions skip this script and use Remotion's own renderer. They still need the same idea: frame = f(t), no wall clock. See `motion-engines`.
+Remotion compositions skip this script and use Remotion's own renderer. They still need the same idea: frame = f(t), no wall clock. See `references/engines.md`.
 
 ## Encode with ffmpeg
 
-Render frames 0 to N−1. Six seconds at 60 fps is `00000.png`–`00359.png`. Frame N would duplicate frame 0 and stall the loop. Full platform limits live in `motion-export`.
+Render frames 0 to N−1. Six seconds at 60 fps is `00000.png`–`00359.png`. Frame N would duplicate frame 0 and stall the loop. Full platform limits live in `references/export.md`.
 
 ```bash
 node render.mjs scene.html --fps 60 --duration 6 --width 1080 --height 1080
@@ -243,7 +237,7 @@ ffmpeg -y -i out/scene.mp4 -vf "select='not(mod(n\,30))',scale=270:-1,tile=6x2" 
 ffmpeg -y -ss 2 -i out/scene.mp4 -vf "tmix=frames=8" -frames:v 1 out/onion.png
 ```
 
-Contact sheets show composition and pacing. Onion skins show spacing: bunched ghosts are slow, even spacing at the ends of a move means there is no easing. Translate what you see into numbered follow-ups in `motion-critique`.
+Contact sheets show composition and pacing. Onion skins show spacing: bunched ghosts are slow, even spacing at the ends of a move means there is no easing. Translate what you see into numbered follow-ups in `references/critique.md`.
 
 ## Troubleshooting
 

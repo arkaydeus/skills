@@ -52,44 +52,54 @@ Or copy `website-audit/SKILL.md` into your skills folder.
 
 The skill applies when you ask for a website audit, launch checklist, or SEO/UX health check, or share a URL to review. Invoke it explicitly with `/website-audit` or `@website-audit` when your client supports skill commands.
 
-## motion-studio
+## motion
 
-Code-first animation: the model writes a deterministic program, Playwright captures `seek(t)` frames, ffmpeg encodes. Start with `motion-studio`, which routes the job (product reel, UI demo, three.js loop, mascot, sound, X export, critique loop, session budget, client quote) to the specialist skills.
+Code-first animation: the model writes a deterministic program, Playwright captures `seek(t)` frames, ffmpeg encodes. Start with `motion`, which asks what you are doing and reads only the reference that stage needs (product reel, UI demo, three.js loop, mascot, sound, X export, critique loop, session budget, client quote).
 
 Credits: [Florence (@flxrnc)](https://x.com/flxrnc), [damkin (@damkina7)](https://x.com/damkina7).
-
-| Skill | What it is for |
-| --- | --- |
-| `motion-studio` | Master router |
-| `motion-render` | Render contract, Playwright capture, ffmpeg |
-| `motion-prompt` | Directed brief and banned defaults |
-| `motion-maths` | Easing, closed-form springs, timing tokens |
-| `motion-principles` | Character and mascot animation principles |
-| `motion-engines` | HTML/CSS, GSAP, Motion, three.js, Remotion, HyperFrames |
-| `motion-sound` | Synthesised SFX, 120 BPM grid, loudness |
-| `motion-critique` | Frame inspection and numbered follow-ups |
-| `motion-export` | Loop seams and X / GIF encode |
-| `motion-harness` | Workspace fence and token budget |
-| `motion-pricing` | Client scope and quotes |
 
 ### Install
 
 ```bash
-npx skills add arkaydeus/skills --skill motion-studio
-npx skills add arkaydeus/skills --skill motion-render
-npx skills add arkaydeus/skills --skill motion-prompt
-npx skills add arkaydeus/skills --skill motion-maths
-npx skills add arkaydeus/skills --skill motion-principles
-npx skills add arkaydeus/skills --skill motion-engines
-npx skills add arkaydeus/skills --skill motion-sound
-npx skills add arkaydeus/skills --skill motion-critique
-npx skills add arkaydeus/skills --skill motion-export
-npx skills add arkaydeus/skills --skill motion-harness
-npx skills add arkaydeus/skills --skill motion-pricing
+npx skills add arkaydeus/skills --skill motion
 ```
 
-Or copy each skill's `SKILL.md` into your skills folder.
+Or copy `motion/SKILL.md` into your skills folder.
 
 ### Use
 
-Invoke `/motion-studio` or `@motion-studio` (or the specialist name) when your client supports skill commands. Load `motion-studio` first on any animation job.
+Invoke `/motion` or `@motion` when your client supports skill commands. Use it first on any animation job; it loads only the reference it needs.
+
+### Renamed
+
+The eleven `motion-*` skills are now one skill, `motion`. Existing installs should remove the old names:
+
+```bash
+npx skills remove motion-studio
+npx skills remove motion-render
+npx skills remove motion-prompt
+npx skills remove motion-maths
+npx skills remove motion-principles
+npx skills remove motion-engines
+npx skills remove motion-sound
+npx skills remove motion-critique
+npx skills remove motion-export
+npx skills remove motion-harness
+npx skills remove motion-pricing
+```
+
+Then add `motion` with the install command above.
+
+| Old skill | Now |
+| --- | --- |
+| `motion-studio` | `motion` (entry) |
+| `motion-render` | `motion/references/render.md` |
+| `motion-prompt` | `motion/references/brief.md` |
+| `motion-maths` | `motion/references/maths.md` |
+| `motion-principles` | `motion/references/principles.md` |
+| `motion-engines` | `motion/references/engines.md` |
+| `motion-sound` | `motion/references/sound.md` |
+| `motion-critique` | `motion/references/critique.md` |
+| `motion-export` | `motion/references/export.md` |
+| `motion-harness` | `motion/references/harness.md` |
+| `motion-pricing` | `motion/references/pricing.md` |

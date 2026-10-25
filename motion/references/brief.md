@@ -1,12 +1,6 @@
----
-name: motion-prompt
-description: Write a directed animation brief with a render contract and a banned-defaults list. Use when starting a motion piece, replacing a vague "make a video" request, stopping generic AI-video look, or turning a product screenshot into a timed shot list. Eight fields: GOAL, OUTPUT, TIME, LOOK, MOTION, SHOTS, BANNED, QA.
-license: MIT
----
-
 # Motion prompt
 
-A vague line gets the model's defaults. A directed brief gets a film you can light, time, and ban. Fill every field, even briefly. Paste the render contract from `motion-render` underneath.
+A vague line gets the model's defaults. A directed brief gets a film you can light, time, and ban. Fill every field, even briefly. Paste the render contract from `references/render.md` underneath.
 
 British English throughout (colour, organised, towards, artefact).
 
@@ -96,19 +90,19 @@ Confirm the CTA is still from 12 s. Confirm render mode does not read
 the clock. Confirm springs are closed-form, not Euler.
 ```
 
-A 6-second seamless three.js loop uses the same eight fields with different OUTPUT and TIME: one word or product, hold long enough to read, sink or orbit back so frame N−1 meets frame 0. Put material numbers in LOOK (metalness 1, roughness 0.10, named lights). See `motion-engines`.
+A 6-second seamless three.js loop uses the same eight fields with different OUTPUT and TIME: one word or product, hold long enough to read, sink or orbit back so frame N−1 meets frame 0. Put material numbers in LOOK (metalness 1, roughness 0.10, named lights). See `references/engines.md`.
 
 ## TIME field, written well
 
 - Give seconds, not "then it appears".
-- Name the curve (`ease-out-quint`, `ease-in-out-quart`, `ease-in-expo`) or the spring (stiffness and damping ratio). Tokens live in `motion-maths`.
+- Name the curve (`ease-out-quint`, `ease-in-out-quart`, `ease-in-expo`) or the spring (stiffness and damping ratio). Tokens live in `references/maths.md`.
 - Stagger in milliseconds (30–80 ms). Keep the whole stagger under about 500 ms.
 - After a hero move, hold at least 0.5 s. Hold text still for at least 1.5 s. Hold an end card 1–2 s.
-- Put hero hits on the beat grid when sound is planned: at 60 fps and 120 BPM a beat is 30 frames (0.5 s). See `motion-sound`.
+- Put hero hits on the beat grid when sound is planned: at 60 fps and 120 BPM a beat is 30 frames (0.5 s). See `references/sound.md`.
 
 ## QA field, written well
 
-Ask for a description of named frames, not "looks good". For a 15-second reel, 1.5 s, 4 s, 8.5 s and 14 s match the critique checkpoints in `motion-critique`. For a 6-second loop, include 0, mid, and N−1.
+Ask for a description of named frames, not "looks good". For a 15-second reel, 1.5 s, 4 s, 8.5 s and 14 s match the critique checkpoints in `references/critique.md`. For a 6-second loop, include 0, mid, and N−1.
 
 A directed brief still needs the follow-up loop. Directing means that loop starts from a usable draft, not that one prompt ships the film.
 
