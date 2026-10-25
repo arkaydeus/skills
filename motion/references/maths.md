@@ -1,9 +1,3 @@
----
-name: motion-maths
-description: Shared timing maths for code-driven animation. Use when choosing easing curves, closed-form springs, durations, staggers, or a beat grid; when implementing tween(t) or spring(t) in canvas, CSS, GSAP, Remotion, or three.js; or when a seek(t) scene must stay deterministic. Do not Euler-integrate springs.
-license: MIT
----
-
 # Motion maths
 
 Keep timing in one token file and use only those values. Good motion is a handful of numbers applied consistently.
@@ -96,7 +90,7 @@ Durations in milliseconds for interface work sit roughly in 100–500 ms: 100 ms
 
 Staggers: 30–80 ms between items. If there are many items, shrink the gap so the whole sequence stays under about 500 ms.
 
-Beat grid: frames per beat = `fps × 60 / BPM`. At 60 fps and 120 BPM a beat is 30 frames (0.5 s). Put hero hits on beats, secondary hits on half-beats. See `motion-sound`.
+Beat grid: frames per beat = `fps × 60 / BPM`. At 60 fps and 120 BPM a beat is 30 frames (0.5 s). Put hero hits on beats, secondary hits on half-beats. See `references/sound.md`.
 
 Holds: at least 0.5 s after a hero move; text still long enough to read twice (1.5 s is a floor); end card 1–2 s.
 

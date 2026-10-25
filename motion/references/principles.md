@@ -1,16 +1,10 @@
----
-name: motion-principles
-description: Apply classical character-animation principles as concrete, numbered prompt lines. Use when animating a mascot, character, creature, or anthropomorphic product; when squash, anticipation, follow-through, or arcs feel missing; or when a model distorts proportions while "adding life".
-license: MIT
----
-
 # Motion principles
 
 The twelve principles in Thomas and Johnston, *The Illusion of Life* (1981), still make movement feel alive. The model knows the names. Naming them is not enough. Say where, how much, and for how many frames.
 
 British English throughout (colour, organised, towards, artefact).
 
-Use with `motion-maths` for springs and easings, `motion-prompt` for the brief, and `motion-critique` after the first render. Damping ratio 0.4–0.6 is the mascot band; do not use that bounce on UI type.
+Read `references/maths.md` for springs and easings, `references/brief.md` for the brief, and `references/critique.md` after the first render. Damping ratio 0.4–0.6 is the mascot band; do not use that bounce on UI type.
 
 ## Prompt as numbers
 
@@ -49,7 +43,7 @@ Work principles in one at a time across critique rounds: anticipation first, the
 
 One hero action. Rank anything else. A blink during a jump is two ideas. Holds apply to characters too: after a landing, freeze the body long enough that the follow-through can read.
 
-For a looping mascot, every deform must return to the frame-0 pose by frame N−1. See `motion-export`.
+For a looping mascot, every deform must return to the frame-0 pose by frame N−1. See `references/export.md`.
 
 ## Credits
 

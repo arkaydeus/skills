@@ -1,16 +1,10 @@
----
-name: motion-critique
-description: Inspect rendered animation frames and send numbered, one-theme follow-ups until the piece holds. Use after the first encode, when a loop looks cheap, busy, or off-beat, or when running an automated checkpoint score-and-patch cycle. Look at real PNGs and contact sheets, not only the live preview.
-license: MIT
----
-
 # Motion critique
 
 Render, look, fix. Every round looks at actual frames, writes down what is wrong, converts it to numbers, and sends one focused follow-up.
 
 British English throughout (colour, organised, towards, artefact).
 
-You need frames or an MP4 from `motion-render`. Timing language lives in `motion-maths`. Vague-to-numbers translations below assume 60 fps.
+You need frames or an MP4 from `references/render.md`. Timing language lives in `references/maths.md`. Vague-to-numbers translations below assume 60 fps.
 
 ## A round
 
@@ -23,7 +17,7 @@ The first pass is a sketch. Directed briefs still take several rounds. A piece t
 
 ## Inspection tools
 
-Commands live in `motion-render`. Use them.
+Commands live in `references/render.md`. Use them.
 
 - **Contact sheet:** composition and pacing. Fail if any column has no obvious hero, or if every frame is centred the same way.
 - **Onion skin:** spacing. Bunched ghosts = slow. Even spread at the start or end of a move = no easing.
@@ -49,7 +43,7 @@ If the score is below 8, patch and re-render. If it is 8 or above, encode the ma
 
 Do not treat 8/10 as taste. It is a gate for collisions and settling. Taste still needs a person.
 
-Overnight runs that iterate this loop need the stop conditions in `motion-harness`. Unbounded "try again" is how the bill explodes.
+Overnight runs that iterate this loop need the stop conditions in `references/harness.md`. Unbounded "try again" is how the bill explodes.
 
 ## Follow-ups that work
 
